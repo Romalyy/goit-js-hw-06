@@ -1,30 +1,31 @@
 
 const form = document.querySelector('.login-form');
-const formInput = document.querySelectorAll('input');
-// // console.log(form);
-// // console.log(formInput);
-// form.addEventListener('submit', onFormSubmit);
+const formInputs = document.querySelectorAll('input');
 
-// function onFormSubmit(event) {
-//     event.preventDefault();
-//     // const formElements = event.currentTarget.elements;
+form.addEventListener('submit', onFormSubmit);
 
-//     if (formInput.currentTarget.elements.subscription.value === '') {
-//         alert('Все поля должны быть заполнены');
-// }
-// }
+function onFormSubmit(event) {
+        event.preventDefault();
 
+        const formElements = event.currentTarget.elements;
 
-function onFormSubmit ( )
-{
-	valid = true;
-
-        if ( document.form.formInput.value == "" )
-        {
-                alert ( "Пожалуйста заполните поле 'Ваше имя'." );
-                valid = false;
+        const emailInput = formElements.email.value;
+        const passwordInput = formElements.password.value;
+        
+        const formData = {
+                emailInput,
+                passwordInput,
         }
+        
+        console.log(formData);
+        console.log(emailInput, passwordInput);
 
-        return valid;
+        formInputs.forEach(function (input) {
+                if (input.value === '') {
+                        alert('Все поля должны быть заполнены');
+                        document.search.reset();
+                }
+        })
 }
+
 

@@ -6,7 +6,7 @@ form.addEventListener('submit', onFormSubmit);
 
 function onFormSubmit(event) {
         event.preventDefault();
-
+        
         const formElements = event.currentTarget.elements;
 
         const emailInput = formElements.email.value;
@@ -22,10 +22,10 @@ function onFormSubmit(event) {
 
         formInputs.forEach(function (input) {
                 if (input.value === '') {
-                        alert('Все поля должны быть заполнены');
-                        document.search.reset();
+                        alert('Все поля должны быть заполнены');    
                 }
-        })
+        })  
+        form.reset();
 }
 
 

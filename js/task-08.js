@@ -20,12 +20,16 @@ function onFormSubmit(event) {
         console.log(formData);
         console.log(emailInput, passwordInput);
 
-        formInputs.forEach(function (input) {
+        const formInputsValue = formInputs.forEach(function (input) {
                 if (input.value === '') {
                         alert('Все поля должны быть заполнены');    
                 }
+                
+                
         })  
-        form.reset();
+        if (formInputsValue !== '') {
+                form.reset();
+        }
 }
 
 

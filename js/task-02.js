@@ -1,3 +1,4 @@
+
 const ingredients = [
   'Potatoes',
   'Mushrooms',
@@ -7,32 +8,48 @@ const ingredients = [
   'Condiments',
 ];
 
-const ingredientsEl = document.createElement('ul');
 
-const ingredientsFirstItem = document.createElement('li');
-ingredientsFirstItem.textContent = 'Potatoes';
-ingredientsFirstItem.classList.add('item');
 
-const ingredientsSecondItem = document.createElement('li');
-ingredientsSecondItem.textContent = 'Mushrooms';
-ingredientsSecondItem.classList.add('item');
+// const ingredientsEl = document.createElement('ul');
 
-const ingredientsThirdItem = document.createElement('li');
-ingredientsThirdItem.textContent = 'Garlic';
-ingredientsThirdItem.classList.add('item');
+// const ingredientsFirstItem = document.createElement('li');
+// ingredientsFirstItem.textContent = 'Potatoes';
+// ingredientsFirstItem.classList.add('item');
 
-const ingredientsFourthItem = document.createElement('li');
-ingredientsFourthItem.textContent = 'Tomatos';
-ingredientsFourthItem.classList.add('item');
+// const ingredientsSecondItem = document.createElement('li');
+// ingredientsSecondItem.textContent = 'Mushrooms';
+// ingredientsSecondItem.classList.add('item');
 
-const ingredientsFifthItem = document.createElement('li');
-ingredientsFifthItem.textContent = 'Herbs';
-ingredientsFifthItem.classList.add('item');
+// const ingredientsThirdItem = document.createElement('li');
+// ingredientsThirdItem.textContent = 'Garlic';
+// ingredientsThirdItem.classList.add('item');
 
-const ingredientsSixthItem = document.createElement('li');
-ingredientsSixthItem.textContent = 'Condiments';
-ingredientsSixthItem.classList.add('item');
+// const ingredientsFourthItem = document.createElement('li');
+// ingredientsFourthItem.textContent = 'Tomatos';
+// ingredientsFourthItem.classList.add('item');
 
-ingredientsEl.append(ingredientsFirstItem, ingredientsSecondItem, ingredientsThirdItem, ingredientsFourthItem, ingredientsFifthItem, ingredientsSixthItem);
+// const ingredientsFifthItem = document.createElement('li');
+// ingredientsFifthItem.textContent = 'Herbs';
+// ingredientsFifthItem.classList.add('item');
 
-console.log(ingredientsEl);
+// const ingredientsSixthItem = document.createElement('li');
+// ingredientsSixthItem.textContent = 'Condiments';
+// ingredientsSixthItem.classList.add('item');
+
+// ingredientsEl.append(ingredientsFirstItem, ingredientsSecondItem, ingredientsThirdItem, ingredientsFourthItem, ingredientsFifthItem, ingredientsSixthItem);
+
+// console.log(ingredientsEl);
+
+
+const listElements = document.getElementById('ingredients');
+
+const ingredientsItems = ingredients.map(el => {
+  let itemsEl = document.createElement('li');
+  itemsEl.textContent = el;
+  return itemsEl;
+});
+
+listElements.append(...ingredientsItems);
+console.log(listElements);
+
+
